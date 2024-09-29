@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# By STORM BOT
+# By NINJA
 
 import telebot
 import subprocess
@@ -8,10 +8,10 @@ import json
 import os
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7390863823:AAEPgt21Hj1Nnu9ClPLlhauibEj1dOsL9xI')
+bot = telebot.TeleBot('7659994964:AAFv7OhRlKaDf7a4IOB8WrJNILmOi4A86rs')
 
 # Admin user IDs
-admin_id = ["5599402910"]
+admin_id = ["1240179115"]
 
 # File to store user data with expiry times
 USER_FILE = "users.json"
@@ -30,8 +30,8 @@ import subprocess
 user_data = {}  # Store user information
 user_attack_status = {}  # Track if the user has an ongoing attack
 user_cooldown = {}  # Track when the user last started an attack
-admin_id = ["your_admin_id"]  # Add admin IDs here
-COOLDOWN_TIME = 40  # Cooldown time in seconds (5 minutes)
+admin_id = ["1240179115"]  # Add admin IDs here
+COOLDOWN_TIME = 120  # Cooldown time in seconds (5 minutes)
 
 def save_users(user_data):
     # Function to save user_data, replace with actual file/database saving logic
@@ -54,7 +54,7 @@ def start_attack(user_id, target, port, time):
         bot.send_message(user_id, '''⏳ **Access Expired** ⏳
         
 Your access has **expired** or you are **not authorized** to use this command.
-**By** [STORM BOT](https://t.me/bgmisellingbuying)''')
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)''')
         return
 
     user_attack_status[user_id] = True
@@ -73,7 +73,7 @@ Your access has **expired** or you are **not authorized** to use this command.
 📅 **Access Valid Until:** `{expiry_time.strftime("%Y-%m-%d %H:%M:%S")}`
 ⏳ **Access Remaining:** `{str(remaining_time).split('.')[0]}`
 
-**By** [STORM BOT](https://t.me/bgmisellingbuying)'''
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)'''
 
     bot.send_message(user_id, response)
 
@@ -98,13 +98,13 @@ def handle_stop(message):
             
 🛑 The attack has been **successfully stopped**.
 
-**By** [STORM BOT](https://t.me/bgmisellingbuying)'''
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)'''
         else:
             response = '''❌ **No Active Attack** ❌
             
 You don't have any **running attack** to stop.
 
-**By** [STORM BOT](https://t.me/bgmisellingbuying)'''
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)'''
     else:
         response = '''⏳ **Access Expired** ⏳
         
@@ -144,7 +144,7 @@ def add_user(message):
 
 User access has been granted successfully!
 
-**By** [STORM BOT](https://t.me/bgmisellingbuying)'''
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)'''
             bot.reply_to(message, response)
         else:
             bot.reply_to(message, "Usage: /adduser <user_id> <duration> <min/days>")
@@ -203,7 +203,7 @@ You need to wait **{remaining_time} seconds** before starting a new attack.''')
         
 Your access has **expired** or you are **not authorized** to use this command.
 
-**By** [STORM BOT](https://t.me/bgmisellingbuying)''')
+**By** [NINJA](https://t.me/+qoa8Gxg6M0o3NDVl)''')
 
 # Start attack command
 @bot.message_handler(commands=['attack3'])
@@ -230,7 +230,7 @@ def handle_attack(message):
             
             start_attack(user_id, target, port, time)
         else:
-            response = "Usage: /attack3 <target> <port> <time>\nBy STORM BOT @https://t.me/bgmisellingbuying"
+            response = "Usage: /attack3 <target> <port> <time>\nBy NINJA @https://t.me/+qoa8Gxg6M0o3NDVl"
             bot.reply_to(message, response)
     else:
         response = "❌ Your access has expired or you are not authorized to use this command."
@@ -247,10 +247,10 @@ def show_help(message):
 /mylogs - Check your recent attack logs.
 /adduser <user_id> <duration> <min/days> - Add a user with timed access.
 
-By STORM BOT @https://t.me/bgmisellingbuying
+By NINJA @https://t.me/+qoa8Gxg6M0o3NDVl
 '''
     bot.reply_to(message, help_text)
 
 # Polling to start the bot
 bot.polling()
-# By STORM BOT @https://t.me/bgmisellingbuying
+# By NINJA @https://t.me/+qoa8Gxg6M0o3NDVl
